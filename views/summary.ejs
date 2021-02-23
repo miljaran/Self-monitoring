@@ -1,0 +1,69 @@
+<%- include('./partials/header.ejs') %>
+    <h1>Here is a summary of your reports!</h1>
+    <p><b>Your weekly averages:</b><br>
+      Sleep duration:
+      <% if (week.sleepduration) { %>
+        <%=week.sleepduration%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Time spent on sports and exercise:
+      <% if (week.sportstime) { %>
+        <%=week.sportstime%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Time spent studying:
+      <% if (week.studytime) { %>
+        <%=week.studytime%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Quality of sleep:
+      <% if (week.sleepquality) { %>
+        <%=week.sleepquality%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Generic mood:
+      <% if (week.mood) { %>
+        <%=week.mood%>/5
+      <% } else { %>
+        No data
+      <% } %>
+    </p>
+
+    <p><b>Your monthly averages:</b><br>
+      Sleep duration:
+      <% if (month.sleepduration) { %>
+        <%=month.sleepduration%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Time spent on sports and exercise:
+      <% if (month.sportstime) { %>
+        <%=month.sportstime%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Time spent studying:
+      <% if (month.studytime) { %>
+        <%=month.studytime%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Quality of sleep:
+      <% if (month.sleepquality) { %>
+        <%=month.sleepquality%> hours
+      <% } else { %>
+        No data
+      <% } %><br>
+      Generic mood:
+      <% if (month.mood) { %>
+        <%=month.mood%>/5
+      <% } else { %>
+        No data
+      <% } %>
+    </p>
+
+<%- include('./partials/footer.ejs') %>

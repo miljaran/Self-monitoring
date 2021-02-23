@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+      <h1>Login!</h1>
+      <p>If you don't have an account yet you can register <a href="/auth/registration">here</a>.</p>
+      <form method="POST" action="/auth/login">
+        <fieldset>
+          <%- include('./partials/authErrors.ejs', { errors: errors }) %>
+          <label for='email'>Email: </label>
+          <input type='email' name='email' />
+          <label for='password'>Password: </label>
+          <input type='password' name='password' />
+          <input type='submit' value="Submit!"/>
+        </fieldset>
+      </form>
+<%- include('./partials/footer.ejs') %>

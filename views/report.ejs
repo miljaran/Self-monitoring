@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs') %>
+<h1>Add new reports!</h1>
+  <% if (morning && evening) { %>
+    <p>You have alredy added morning and evening reports for today. If you add a new report it will replace the old one.<br>
+    You can add reports also for other days.</p>
+  <% } else if (morning) { %>
+    <p>Morning report for today already exists. If you add a new morning report it will replace the old one.<br>
+    You can also add an evening report for today or a report for another day.</p>
+  <% } else if (evening) { %>
+    <p>Evening report for today already exists. If you add a new evening report it will replace the old one.
+    You can also add an morning report for today or a report for another day.</p>
+  <% } else { %>
+    <p>You haven't added any reports for today yet.</p>
+  <% } %>
+
+    <p>Do you want to add:</p>
+    <form method="GET" action="/behavior/reporting/morning">
+      <input type="submit" value="a morning report" />
+    </form>
+    <form method="GET" action="/behavior/reporting/evening">
+      <input type="submit" value="an evening report" />
+    </form>
+<%- include('./partials/footer.ejs') %>

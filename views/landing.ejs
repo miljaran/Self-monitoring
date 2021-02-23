@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+    <h1>Welcome!</h1>
+    <p>This is a web application for reporting and self monitoring your daily behavior.</p>
+
+      <p><% if (today) { %>
+        Users' average mood today is <%= today %>.
+        <% } else { %>
+          There are no reports for today yet.
+        <% } %>
+        <% if (yesterday) { %>
+          Users' average mood yesterday was <%= yesterday %>.
+        <% } else { %>
+          There are no reports for yesterday.
+        <% } %>
+        <br>
+        <% if (!today || !yesterday) { %>
+          <b>No trend can be defined.</b>
+        <% } else if (yesterday > today) { %>
+          <b>Things are looking a bit gloomy today.</b>
+        <% } else { %>
+          <b>Things are looking bright today.</b>
+          <% } %>
+        </p>
+
+<%- include('./partials/footer.ejs') %>

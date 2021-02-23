@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>
+      <h1>Register!</h1>
+      <p>If you alredy have an account you can log in <a href="/auth/login">here</a>.</p>
+      <form method="POST" action="/auth/registration">
+        <fieldset>
+          <%- include('./partials/errors.ejs', { errors: errors}) %>
+          <label for='email'>Email: </label>
+          <input type='email' name='email' value="<%= email %>" />
+          <label for='password'>Password: </label>
+          <input type='password' name='password' value="<%= password %>" />
+          <label for='verification'>Password verification: </label>
+          <input type='password' name='verification' value="<%= verification %>"/>
+          <input type='submit' value="Submit!"/>
+        </fieldset>
+      </form>
+<%- include('./partials/footer.ejs') %>

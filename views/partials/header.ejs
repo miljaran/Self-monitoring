@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Self-monitoring</title>
+    <meta charset="utf-8">
+    <script src="../../static/code.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+  </head>
+  <body>
+    <nav style="background-color:lavender;font-size:18px;padding-left:20px;word-spacing:10px; padding-right: 20px">
+      <a href="/">Home</a>
+      <a href="/behavior/summary">Summaries</a>
+      <a href="/behavior/reporting">Reporting</a>
+      <% if (user) { %>
+        <div style="float:right; word-spacing:2px">
+          Logged in as <%= user.email %>
+          <a href="/auth/logout">Log out</a>
+        </div>
+      <% } else { %>
+        <div style="float:right;">
+        <a href="/auth/login">Login</a>
+        <a href="/auth/registration">Register</a>
+      </div>
+      <% } %>
+    </nav>
+    <br>
+    <div class="container">
