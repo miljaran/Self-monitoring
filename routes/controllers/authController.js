@@ -7,6 +7,14 @@ const validationRules = {
     verification: [required]
 };
 
+const validationMessages = {
+  "password.required": "The password is required.",
+  "password.minLength": "The password has to be at least 4 charachers long.",
+  "email.required": "The email is required.",
+  "email.isEmail": "The email is not a valid email address.",
+  "verification.required": "The email verification is required.",
+}
+
 const getRegistrationForm = async (request, session) => {
     const data = {
       email: "",
@@ -35,10 +43,10 @@ const showRegistrationForm = async({render, session}) => {
 
 const postRegistrationForm = async({render, request, response, session}) => {
   const data = await getRegistrationForm(request, session);
-  let [passes, errors] = await validate(data, validationRules);
+  let [passes, errors] = await validate(data, validationRules, {messages: validationMessages});
 
   if (data.password !== data.verification) {
-    errors.mismatchPwd= {passwordMismatch: 'The entered password did not match.'};
+    errors.mismatchPwd= {passwordMismatch: 'The entered passwords did not match.'};
     passes = false;
   }
 
@@ -55,7 +63,7 @@ const postRegistrationForm = async({render, request, response, session}) => {
     const hashed = await hash(data.password);
     addUser(data.email, hashed);
     response.body = 'Registered successfully';
-    response.redirect('/');
+    response.redirect('/auth/login');
   }
 };
 
