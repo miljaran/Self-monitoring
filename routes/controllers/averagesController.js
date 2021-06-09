@@ -4,6 +4,7 @@ import { searchMorning, searchEvening } from "../../services/reportService.js";
 const showSummary = async({render, session}) => {
   const user = (await session.get('user'));
   const week = await avgWeek(user.id);
+  console.log(week)
   const month = await avgMonth(user.id);
   render('summary.ejs', { week: week, month: month, user: user })
 }

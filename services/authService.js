@@ -6,7 +6,7 @@ const searchUsers = async(email) => {
   if (res.rowCount === 0) {
     return null;
   }
-  return res.rowsOfObjects()[0];
+  return res.rows[0];
 }
 
 const addUser = async(email, hash) => {

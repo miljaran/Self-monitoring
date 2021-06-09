@@ -43,7 +43,7 @@ const searchMorning = async(id, date) => {
   if (!res) {
     return null;
   }
-  return res.rowsOfObjects()[0];
+  return res.rows[0];
 }
 
 const addEvening = async(id, date, sportsTime, studyTime, eating, mood) => {
@@ -93,7 +93,7 @@ const searchEvening = async(id, date) => {
   if (res.rowCount === 0) {
     return null;
   }
-  return res.rowsOfObjects()[0];
+  return res.rows[0];
 }
 
 export { addMorning, addEvening, getMorning, getEvening, searchMorning, searchEvening }

@@ -1,7 +1,7 @@
 # Application for self-monitoring
 
 ## Description
-This is a web application where users can keep track on their daily behavior. Users can add reports twice a day and both reports contain a bit different metrics.
+This is a web application where users can keep track on their daily behavior, for example hours slept and exercised. Users can add reports twice a day and both reports contain a bit different metrics. Users can see their personal averages for the past 7 and 30 days. There are also API endpoints to retrieve the averages of all the users.
 
 
 ## Creating databases
@@ -24,7 +24,7 @@ eating INTEGER
 
 
 ## Running application
-The application is not currently deployed. It can be run locally in Linux with the command `deno run --allow-net --allow-env --allow-read --unstable app.js`. The database variables must be given in the config.js. After that the application is available at http://localhost:7777
+The application is not currently deployed. It can be run locally in Linux with the command `deno run --allow-net --allow-env --allow-read --unstable app.js`. The database variables must be given in the config.js or environmental variables. After that the application is available at http://localhost:7777
 
 
 ## How to use
